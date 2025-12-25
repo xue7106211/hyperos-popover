@@ -24,7 +24,7 @@ export function ControlPanel({
             <CardDescription>详细的位置计算步骤和公式</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="bg-muted rounded-md p-3 max-h-[400px] overflow-y-auto">
+            <div className="bg-muted rounded-md p-3 max-h-[750px] overflow-y-auto">
               <pre className="font-mono text-xs text-muted-foreground whitespace-pre-wrap break-words m-0 leading-relaxed">
                 {calculationText}
               </pre>
