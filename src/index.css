@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Minimalist Modern Design System */
+    /* Minimalist Modern Design System - Light Mode */
     --background: #FAFAFA;
     --foreground: #0F172A;
     --muted: #F1F5F9;
@@ -21,6 +21,26 @@
     --error: #EF4444;
     --primary: #0052FF;
     --secondary: #F1F5F9;
+  }
+
+  :root[data-theme="dark"] {
+    /* Minimalist Modern Design System - Dark Mode */
+    --background: #0F172A;
+    --foreground: #F8FAFC;
+    --muted: #1E293B;
+    --muted-foreground: #94A3B8;
+    --accent: #4D7CFF;
+    --accent-secondary: #7C9EFF;
+    --accent-foreground: #FFFFFF;
+    --border: #334155;
+    --card: #1E293B;
+    --popover: #1E293B;
+    --popover-foreground: #F8FAFC;
+    --ring: #4D7CFF;
+    --radius: 12px;
+    --error: #F87171;
+    --primary: #4D7CFF;
+    --secondary: #334155;
   }
 }
 
@@ -123,6 +143,19 @@
 
   .scrollbar-subtle::-webkit-scrollbar-thumb:hover {
     background-color: rgba(148, 163, 184, 0.5);
+  }
+
+  /* Dark mode scrollbar */
+  :root[data-theme="dark"] .scrollbar-subtle {
+    scrollbar-color: rgba(100, 116, 139, 0.4) transparent;
+  }
+
+  :root[data-theme="dark"] .scrollbar-subtle::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 116, 139, 0.4);
+  }
+
+  :root[data-theme="dark"] .scrollbar-subtle::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(100, 116, 139, 0.6);
   }
 }
 

@@ -178,8 +178,8 @@ export function Canvas({ anchorRect, popoverSize, safeRect, result, onAnchorClic
               style={{
                 ...canvasStyle,
                 backgroundImage: `
-                  linear-gradient(rgba(51, 255, 0, 0.05) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(51, 255, 0, 0.05) 1px, transparent 1px)
+                  linear-gradient(rgba(133, 235, 255, 0.08) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(133, 235, 255, 0.08) 1px, transparent 1px)
                 `,
                 backgroundSize: '40px 40px',
               }}
@@ -204,13 +204,13 @@ export function Canvas({ anchorRect, popoverSize, safeRect, result, onAnchorClic
         <div
           ref={anchorRef}
           data-anchor
-          className="absolute bg-white border-2 border-[var(--foreground)] cursor-move transition-all duration-200 ease-out rounded-[8px]"
+          className="absolute bg-[var(--card)] border-2 border-[var(--foreground)] cursor-move transition-all duration-200 ease-out rounded-[8px]"
           style={{
             left: `${anchorRect.x}px`,
             top: `${anchorRect.y}px`,
             width: `${anchorRect.width}px`,
             height: `${anchorRect.height}px`,
-            boxShadow: '0px 4px 12px 0px rgba(46, 46, 46, 0.15)',
+            boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.15)',
             borderColor: 'rgba(133, 235, 255, 1)',
           }}
           onClick={handleAnchorClick}
@@ -233,12 +233,11 @@ export function Canvas({ anchorRect, popoverSize, safeRect, result, onAnchorClic
             top: `${result.y}px`,
             width: `${popoverSize.width}px`,
             height: `${popoverSize.height}px`,
-            boxShadow: '0px 7px 16px 0px rgba(5, 60, 72, 0.08)',
-            backgroundColor: 'rgba(214, 248, 255, 1)',
+            boxShadow: '0px 7px 16px 0px rgba(0, 0, 0, 0.15)',
             borderColor: 'rgba(133, 235, 255, 1)',
           }}
         >
-          <span className="absolute top-2 left-2 text-xs text-[var(--popover-foreground)] font-mono font-medium uppercase text-glow" style={{ color: 'rgba(8, 118, 140, 1)' }}>
+          <span className="absolute top-2 left-2 text-xs text-[var(--popover-foreground)] font-mono font-medium uppercase text-glow" style={{ color: 'rgba(133, 235, 255, 1)' }}>
             POPOVER
           </span>
           <span className={`absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-mono uppercase whitespace-nowrap ${

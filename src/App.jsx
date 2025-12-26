@@ -1,9 +1,14 @@
 // App.jsx 入口组件，包含主容器与核心逻辑
+import { useEffect } from 'react';
 import { usePopoverCalculation } from '@/hooks/usePopoverCalculation';
+import { useTheme } from '@/hooks/useTheme';
 import { Canvas } from '@/components/Canvas';
 import { ControlPanel } from '@/components/ControlPanel';
 
 function App() {
+  // 主题管理
+  const { toggleTheme } = useTheme();
+
   // 解构自定义 Hook 的状态与方法
   const {
     anchorRect,        // 锚点矩形
@@ -25,6 +30,34 @@ function App() {
   const handleAnchorClick = ({ x, y }) => {
     setAnchorRect({ ...anchorRect, x, y });
   };
+
+  // 快捷键监听：按 D 键切换主题
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // 检查是否按下 D 键（不区分大小写）
+      if (e.key === 'd' || e.key === 'D') {
+        // 检查是否在输入框中，避免在输入时误触发
+        const target = e.target;
+        const isInputElement = 
+          target.tagName === 'INPUT' || 
+          target.tagName === 'TEXTAREA' || 
+          target.isContentEditable;
+        
+        // 如果不在输入框中，则切换主题
+        if (!isInputElement) {
+          toggleTheme();
+        }
+      }
+    };
+
+    // 添加全局键盘事件监听器
+    window.addEventListener('keydown', handleKeyDown);
+
+    // 清理函数：组件卸载时移除事件监听器
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [toggleTheme]);
 
   return (
     <div className="h-screen bg-background overflow-hidden flex flex-col relative z-10">
