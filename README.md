@@ -126,6 +126,43 @@ hyperos-popover/
 
 研发人员可以直接参考 `src/lib/calculations.js` 中的计算函数（`calculateRight`, `calculateLeft`, `calculateDown`, `calculateUp`）来实现 Popover 的位置计算逻辑。
 
+## Speed Insights
+
+This project includes [Vercel Speed Insights](https://vercel.com/docs/speed-insights) for performance monitoring. Speed Insights is automatically integrated into the application and will track Web Vitals and other key performance metrics.
+
+### Setup
+
+Speed Insights has been configured in the project with the following setup:
+
+1. **Package Installation**: The `@vercel/speed-insights` package is installed as a dependency
+2. **React Integration**: The `SpeedInsights` component is imported from `@vercel/speed-insights/react` and added to the App component
+3. **Auto-Tracking**: The component automatically tracks performance metrics and sends them to Vercel
+
+The component is placed at the root level of the application in `src/App.jsx`:
+
+```jsx
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
+function App() {
+  return (
+    <div>
+      {/* ... your app content ... */}
+      <SpeedInsights />
+    </div>
+  );
+}
+```
+
+### Deployment
+
+To view Speed Insights data:
+
+1. Deploy your application to [Vercel](https://vercel.com)
+2. Speed Insights will automatically start collecting metrics
+3. View your performance data in the [Vercel Dashboard](https://vercel.com/dashboard) under the **Speed Insights** tab
+
+For more information, see the [Vercel Speed Insights documentation](https://vercel.com/docs/speed-insights).
+
 ## 特性
 
 - ✅ 实时计算和可视化更新
@@ -134,3 +171,4 @@ hyperos-popover/
 - ✅ 详细的计算过程展示
 - ✅ 响应式布局设计
 - ✅ 使用 shadcn/ui 组件库，界面美观现代
+- ✅ Vercel Speed Insights 集成，性能监控
