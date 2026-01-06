@@ -1,5 +1,6 @@
 // App.jsx 入口组件，包含主容器与核心逻辑
 import { useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { usePopoverCalculation } from '@/hooks/usePopoverCalculation';
 import { useTheme } from '@/hooks/useTheme';
 import { Canvas } from '@/components/Canvas';
@@ -91,6 +92,7 @@ function App() {
           />
         </div>
       </div>
+      <SpeedInsights />
     </div>
   );
 }
